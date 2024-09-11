@@ -5,16 +5,23 @@ automated website access
 JRE System Library [JavaSE-17]
 
 # SeleniumJavaCC_ARGS.jar
-execute this jar file like
-Param1: yourUsername - just the username no fancy characters
-Param2: yourpassword - just your password
-SeleniumJavaCC_ARGS.jar yourUsername yourpassword 
+window: make a reference (Verknüpfung) and attach to target path following args separated by a whitespace character:
 
-No credentials will be persistet!
-They get disposed after use.
+1. yourUsername - no containing whitespaces
+2. yourpassword - no containing whitespaces
 
-## Referenced Libraries
-java stable 4.24.0 
+Example:
+..\SeleniumJavaCC_ARGS.jar Max123 ztropyx85
+
+
+Credentials will be disposed after each run.
+
+## Referenced Librariesa
+included - udjust classpath accordingly
+\lib\selenium-java-4.24.0
+
+or
+
 https://www.selenium.dev/downloads/
 
 
