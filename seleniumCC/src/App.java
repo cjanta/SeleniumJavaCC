@@ -21,8 +21,8 @@ public class App {
         By loginPassword = By.name("login_passwort");
         WebElement passwordInput = wait.until(ExpectedConditions.presenceOfElementLocated(loginPassword));
         
-        usernameInput.sendKeys("SkAN117");
-        passwordInput.sendKeys("x8t3tqzryz");
+        usernameInput.sendKeys("benutzername");
+        passwordInput.sendKeys("passwort");
 
         By loginButtonPath = By.xpath("//input[@type='submit']");
         WebElement login_button = driver.findElement(loginButtonPath);
