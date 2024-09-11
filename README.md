@@ -16,7 +16,7 @@ Example:
 
 Credentials will be disposed after each run.
 
-## Referenced Librariesa
+## Referenced Libs
 included - udjust classpath accordingly
 \lib\selenium-java-4.24.0
 
