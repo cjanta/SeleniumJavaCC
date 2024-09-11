@@ -5,6 +5,13 @@
             "name": "App",
             "request": "launch",
             "mainClass": "App",
+            "projectName": "SeleniumJavaCC_34aa9c57"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
             "projectName": "SeleniumJavaCC_23dbbb5e"
         },
         {

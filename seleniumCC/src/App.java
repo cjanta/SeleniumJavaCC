@@ -21,8 +21,8 @@ public class App {
         By loginPassword = By.name("login_passwort");
         WebElement passwordInput = wait.until(ExpectedConditions.presenceOfElementLocated(loginPassword));
         
-        usernameInput.sendKeys("benutzername");
-        passwordInput.sendKeys("passwort");
+        usernameInput.sendKeys(getUsernameFromArgs(args));
+        passwordInput.sendKeys(getPasswordFromArgs(args));
 
         By loginButtonPath = By.xpath("//input[@type='submit']");
         WebElement login_button = driver.findElement(loginButtonPath);
@@ -36,8 +36,24 @@ public class App {
         WebElement zeiterfassung_oeffnen_button = wait.until(ExpectedConditions.elementToBeClickable((zeiterfassung_oeffnen_button_path)));
         zeiterfassung_oeffnen_button.click();
 
-        By finalButtonPath = By.name("kommengehenbutton");
-        WebElement finalButton = wait.until(ExpectedConditions.elementToBeClickable((finalButtonPath)));
-        finalButton.click();
+        // By finalButtonPath = By.name("kommengehenbutton");
+        // WebElement finalButton = wait.until(ExpectedConditions.elementToBeClickable((finalButtonPath)));
+        // finalButton.click();
     }
+
+    private static String getUsernameFromArgs(String[] args){
+        if(args.length > 0){
+            return args[0];
+        }
+        return "";
+    }
+
+    private static String getPasswordFromArgs(String[] args){
+        if(args.length > 1){
+            return args[1];
+        }
+        return "";
+    }
+
+
 }
