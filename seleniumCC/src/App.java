@@ -9,8 +9,7 @@ import java.time.Duration;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        WebDriver driver = new FirefoxDriver();
-        // WebDriver driver = new ChromeDriver();
+        WebDriver driver = getWebDriver(args);
         
         driver.get("https://portal.cc-student.com/index.php?cmd=login");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
@@ -42,17 +41,25 @@ public class App {
     }
 
     private static String getUsernameFromArgs(String[] args){
-        if(args.length > 0){
-            return args[0];
-        }
-        return "";
+        return args.length > 0 ? args[0] : "";
     }
 
     private static String getPasswordFromArgs(String[] args){
-        if(args.length > 1){
-            return args[1];
+        return args.length > 1 ? args[1] : "";
+    }
+
+    private static WebDriver getWebDriver(String[] args){
+        if(args.length > 2){
+            String driverParam = args[2].toLowerCase();
+
+            if (driverParam.equals("firefox")){
+                return new FirefoxDriver();
+            }
+            else if (driverParam.equals("chrome")){
+                return new ChromeDriver();
+            }        
         }
-        return "";
+        return new FirefoxDriver();
     }
 
 

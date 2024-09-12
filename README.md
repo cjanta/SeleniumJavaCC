@@ -9,9 +9,10 @@ window: make a reference (Verknüpfung) and attach to target path following args
 
 1. yourUsername - no containing whitespaces
 2. yourpassword - no containing whitespaces
+3. driver [optional]: default firefox - firefox | chrome
 
 Example:
-..\SeleniumJavaCC_ARGS.jar Max123 ztropyx85
+..\SeleniumJavaCC_ARGS.jar Max123 ztropyx85 chrome
 
 
 Credentials will be disposed after each run.
