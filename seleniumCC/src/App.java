@@ -36,9 +36,9 @@ public class App {
         WebElement zeiterfassung_oeffnen_button = wait.until(ExpectedConditions.elementToBeClickable((zeiterfassung_oeffnen_button_path)));
         zeiterfassung_oeffnen_button.click();
 
-        // By finalButtonPath = By.name("kommengehenbutton");
-        // WebElement finalButton = wait.until(ExpectedConditions.elementToBeClickable((finalButtonPath)));
-        // finalButton.click();
+        By finalButtonPath = By.name("kommengehenbutton");
+        WebElement finalButton = wait.until(ExpectedConditions.elementToBeClickable((finalButtonPath)));
+        finalButton.click();
     }
 
     private static String getUsernameFromArgs(String[] args){
