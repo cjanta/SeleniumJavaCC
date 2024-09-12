@@ -5,7 +5,7 @@ automated website access
 JRE System Library [JavaSE-17]
 
 # SeleniumJavaCC_ARGS.jar
-window: make a reference (Verknüpfung) and attach to target path following args separated by a whitespace character:
+windows: make a reference (Verknüpfung) and attach to target path following args separated by a whitespace character:
 
 1. yourUsername - no containing whitespaces
 2. yourpassword - no containing whitespaces
