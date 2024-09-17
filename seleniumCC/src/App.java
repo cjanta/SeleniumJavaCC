@@ -38,8 +38,7 @@ public class App {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         By timeRecordingMenu = By.xpath("//a[contains(@href, 'cmd=kug')]");
         WebElement timeRecordingMenuButton = wait.until(ExpectedConditions.elementToBeClickable(timeRecordingMenu));
-        timeRecordingMenuButton.click();
-        
+        timeRecordingMenuButton.click();     
     }
 
     private static void clickOpenTimeRecordingButton(WebDriver driver){
