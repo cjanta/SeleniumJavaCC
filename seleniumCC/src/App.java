@@ -21,7 +21,7 @@ public class App {
 
         if(isUserLoggedIn){
             navigateToTimeRecordingMenu(driver);
-            clickOpenTimeRecordingButton(driver);
+            clickModalTimeRecordingButton(driver);
             clickFinalTimeRecordingButton(driver);
         }
  
@@ -41,7 +41,7 @@ public class App {
         timeRecordingMenuButton.click();     
     }
 
-    private static void clickOpenTimeRecordingButton(WebDriver driver){
+    private static void clickModalTimeRecordingButton(WebDriver driver){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         By zeiterfassung_oeffnen_button_path = By.xpath("//button[contains(@name, 'showDialogButton')]");
         WebElement zeiterfassung_oeffnen_button = wait.until(ExpectedConditions.elementToBeClickable((zeiterfassung_oeffnen_button_path)));
