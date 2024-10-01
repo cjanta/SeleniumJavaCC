@@ -25,6 +25,9 @@ or
 
 https://www.selenium.dev/downloads/
 
-# automate with windows client
-TODO: Anleitung mit screenshot zur aufgaben erstellung unter windows
-1. 
+## Usage with task-scheduler
+TODO: 
+- Windows client Aufgabenplaner checklist
+- Linux server toll: "cron" https://help.ubuntu.com/community/CronHowto
+- Linux Gui f. cron: https://gnome-schedule.sourceforge.net/
+- sudo apt-get install gnome-schedule
