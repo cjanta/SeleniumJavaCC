@@ -12,8 +12,8 @@ windows: make a reference (Verknüpfung) and attach to target path following arg
 3. driver [optional]: default firefox - firefox | chrome
 
 Examples:
-..\seleniumCC.jar Max123 ztropyx85 chrome
-..\seleniumCC.jar Max123 ztropyx85
+- ..\seleniumCC.jar Max123 ztropyx85 chrome
+- ..\seleniumCC.jar Max123 ztropyx85
 
 Credentials will be disposed after each run.
 
