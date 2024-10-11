@@ -21,7 +21,7 @@ public class App {
         boolean isUserLoggedIn = isUserAlreadyLoggedIn(driver);
 
         if(!isUserLoggedIn){
-            String[] fakeArgs = {"xxx", "12345668"};
+            String[] fakeArgs = {"Skan117", "x8t3tqzryz"};
             loginToWebsiteWithCredentials(fakeArgs, driver);
             isUserLoggedIn = true;
         }
@@ -35,11 +35,18 @@ public class App {
     }
 
     private static void readParagraph(WebDriver driver){
-        //paragraph = driver.find_element(By.XPATH, "//div[@class='wrapper']//p")
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        By byParagraph = By.xpath("//div[@id='iframeContainer']//p");
-        WebElement paragraph = wait.until(ExpectedConditions.presenceOfElementLocated((byParagraph)));
-        System.out.println(paragraph.getText());
+        WebElement iframeElement = driver.findElement(By.id("TheFrame"));
+        driver.switchTo().frame(iframeElement);
+
+        By byParagraphs = By.xpath("//body//p");
+        WebElement paragraph = driver.findElement(byParagraphs);
+        String readyText = "Sie befinden sich aktuell nicht an einem Comcave Standort.";
+        if (readyText.equals(paragraph.getText())){
+            System.out.println("Nachmittags ein-ausloggen möglich da nicht am Standort.");
+        }
+      
+        driver.switchTo().defaultContent();
+        
     }
 
     private static void clickFinalTimeRecordingButton(WebDriver driver){
