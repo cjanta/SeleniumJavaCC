@@ -9,22 +9,37 @@ import java.time.Duration;
 import java.util.List;
 
 public class App {
+
     public static void main(String[] args) throws Exception {
+        doLoginLogout(args);
+ 
+    }
+
+    private static void doLoginLogout(String[] args){
         WebDriver driver = getWebDriver(args);
         driver.get("https://portal.cc-student.com/index.php?cmd=login");
         boolean isUserLoggedIn = isUserAlreadyLoggedIn(driver);
 
         if(!isUserLoggedIn){
-            loginToWebsiteWithCredentials(args, driver);
+            String[] fakeArgs = {"xxx", "12345668"};
+            loginToWebsiteWithCredentials(fakeArgs, driver);
             isUserLoggedIn = true;
         }
 
         if(isUserLoggedIn){
             navigateToTimeRecordingMenu(driver);
-            clickModalTimeRecordingButton(driver);
-            clickFinalTimeRecordingButton(driver);
+            readParagraph(driver);
+            //clickModalTimeRecordingButton(driver);
+            //clickFinalTimeRecordingButton(driver);
         }
- 
+    }
+
+    private static void readParagraph(WebDriver driver){
+        //paragraph = driver.find_element(By.XPATH, "//div[@class='wrapper']//p")
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        By byParagraph = By.xpath("//div[@id='iframeContainer']//p");
+        WebElement paragraph = wait.until(ExpectedConditions.presenceOfElementLocated((byParagraph)));
+        System.out.println(paragraph.getText());
     }
 
     private static void clickFinalTimeRecordingButton(WebDriver driver){
